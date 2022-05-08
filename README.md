@@ -16,7 +16,6 @@ The results are kept in the Election Analysis txt file.
 
 The candidate vote totals were determined by the following code, with all variables initalized at 0:
 
->    # Retrieve vote count and percentage
 >        votes = candidate_votes.get(candidate_name)
 >        vote_percentage = float(votes) / float(total_votes) * 100
 >        candidate_results = (
