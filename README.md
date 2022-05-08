@@ -1,7 +1,7 @@
 # Election-Analysis
 Python
 ## Overview
-The purpose of this analysis was to review the election results in a Colorado congressional district to determine both the winning candidate, candidate vote totals, and turnout by county.
+The purpose of this analysis was to audit the election results of a Colorado congressional district to determine the winning candidate, candidate vote totals, and turnout by county.
 
 ## Election-Audit Results
 The results are kept in the Election Analysis txt file. 
@@ -24,5 +24,11 @@ The results are kept in the Election Analysis txt file.
   * Winning Vote Count: 272,892
   * Winning Percentage: 73.8%
 
+>    # Retrieve vote count and percentage
+>        votes = candidate_votes.get(candidate_name)
+>        vote_percentage = float(votes) / float(total_votes) * 100
+>        candidate_results = (
+>            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+
 ## Election-Audit Summary
-This python script is quite malleable - so long as the elctiond ate input matches that of the input data here, Python will iterate through the data and pull candidate and county vote results. The input data is a little bare - it doesn't include city or precinct data; if that was something an election commission wanted to see however, the code for pullign county results could be duplicated and retrofited to perform this function.
+This python script is quite malleable - so long as the elction data input matches that of the input data here, Python will iterate through the ballots and pull candidate and county vote results. The input data is a little bare - it doesn't include city or precinct data; if that was something an election commission wanted to see however, the code for pulling county results could be duplicated and retrofited to perform this function. This script additionally only works for ballots containing one elected position - the script would need to be expanded if the input data included multiple races, or the data would need to be broken into multiple, single-position pieces.
